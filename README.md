@@ -1,4 +1,4 @@
-# Lattitudes
+# Latitudes
 Latitudes prototype application build by wemanity employee
 
 # Install all dependances
