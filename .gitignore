@@ -1,0 +1,11 @@
+npm-debug.log
+package-lock.json
+.env
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+dist/
+coverage/

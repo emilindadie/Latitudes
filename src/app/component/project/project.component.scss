@@ -1,0 +1,68 @@
+.spinner {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.mat-spinner {
+    ::ng-deep circle {
+        stroke: #de6269;
+    }
+}
+
+.project-container {
+    padding-top: 5%;
+}
+
+.example-card {
+    width: calc(100% - 70px);
+    height: auto;
+    font-family: "WorkSans", "Helvetica Neue", sans-serif;
+  }
+.example-option {
+    font-family: "WorkSans";
+}
+
+.list-panel {
+    width: 94.8%;
+    padding: 0 3.4% 0 3.4%;
+}
+
+.title {
+    text-align: center;
+    h1 {
+        font-family: 'nunito';
+        font-size: 3em;
+        color: rgba(0,0,0,.87);
+    }
+}
+
+.filter{
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 3.4% 0 3.4%;
+    margin-bottom: 3%;
+    mat-form-field {
+        width: 100%;
+    }
+    .search-container {
+        width: 30%;
+        margin-right: 10%;
+    }
+    .chip-list-container {
+    width: 60%;
+    }
+}
+
+.emptyData {
+    text-align: center;
+    span {
+        font-size: 2em;;
+    }
+}

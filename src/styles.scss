@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; margin: 0;}
+
+@font-face {
+    font-family: 'nunito';
+    font-style: normal;
+    src: url(assets/font/Nunito/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'nunito';
+    font-style: bold;
+    src: url(assets/font/Nunito/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'nunito';
+    font-style: italic;
+    src: url(assets/font/Nunito/Nunito-Italic.ttf);
+}
+
+
+
+@font-face {
+    font-family: 'WorkSans';
+    font-style: normal;
+    src: url(assets/font/Work_Sans/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    font-style: bold;
+    src: url(assets/font/Work_Sans/WorkSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    font-style: medium;
+    src: url(assets/font/Work_Sans/WorkSans-Medium.ttf);
+}
+
+
+
+

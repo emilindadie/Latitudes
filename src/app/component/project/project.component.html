@@ -1,0 +1,67 @@
+<mat-spinner class="spinner" *ngIf="loading | async"></mat-spinner>
+<div class="project-container" fxLayout="column">
+    <div class="top-panel" fxLayout="column">
+        <div class="title" fxLayoutAlign="center center">
+            <h1>Les projets</h1>
+        </div>
+        <div class="filter" fxLayout="row">
+            <div class="search-container">
+                <mat-form-field class="search-field" appearance="fill">
+                    <mat-label>Search by project name</mat-label>
+                    <input matInput [(ngModel)]="projectFilter.searchText">
+                </mat-form-field>
+            </div>
+            <div class="chip-list-container">
+                <mat-form-field  appearance="fill">
+                    <mat-chip-list #chipList aria-label="Skills selection">
+                        <mat-chip
+                            *ngFor="let skills of selectedSkillsList"
+                            [selectable]="selectable"
+                            [removable]="removable"
+                            (removed)="remove(skills)">
+                            {{skills}}
+                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                        </mat-chip>
+                        <input
+                        placeholder="{{chipsListPlaceHolder | async}}"
+                        #skillsInput
+                        [formControl]="skillsCtrl"
+                        [matAutocomplete]="auto"
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="add($event)" />
+                    </mat-chip-list>
+                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)" panelClass="myAutocompletePanel">
+                        <mat-option *ngFor="let skills of selectSkillsList | async" [value]="skills" class="example-option">
+                        {{skills}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field> 
+            </div>
+        </div>
+    </div>
+    <div class="list-panel">
+        <mat-grid-list *ngIf="(emptyData | async) == false" cols="{{gridCols | async}}" rowHeight="300px">
+            <mat-grid-tile *ngFor="let project of projects | projectFilter: projectFilter">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{ project.name}}</mat-card-title>
+                        <mat-card-subtitle>{{ project.smallDescription.substring(0, 90).concat("...") }}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <li *ngFor="let skill of project.skills">
+                            {{ skill }}
+                        </li>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>                
+        </mat-grid-list>
+    </div>
+    <div class="emptyData" *ngIf="emptyData | async">
+        <span>Aucun projet trouvé</span>
+    </div>
+</div>
+            
+            
+            
+        

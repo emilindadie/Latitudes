@@ -1,0 +1,39 @@
+<mat-spinner class="spinner" *ngIf="loading | async"></mat-spinner>
+<div class="action-container" fxLayout="column">
+    <div class="top-panel" fxLayout="column">
+        <div class="title" fxLayoutAlign="center center">
+            <h1>Les actions</h1>
+        </div>
+        <div class="filter" fxLayout="row">
+            <div class="search-container">
+                <mat-form-field class="search-field" appearance="fill">
+                    <mat-label>Search by action name</mat-label>
+                    <input matInput [(ngModel)]="actionFilter.searchText">
+                </mat-form-field>
+            </div>
+            <div class="radio-container">
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedRadio">
+                    <mat-radio-button value="coming" (change)="radioChange($event)">A venir</mat-radio-button>
+                    <mat-radio-button value="all" (change)="radioChange($event)">Tous</mat-radio-button>
+                </mat-radio-group> 
+            </div>
+        </div>
+    </div>
+    <div class="list-panel">
+        <mat-grid-list cols="{{gridCols | async}}" rowHeight="200px">
+            <mat-grid-tile *ngFor="let action of actions | actionFilter: actionFilter">
+                <mat-card class="example-card" (click)="goToProjectPage(action)">
+                    <mat-card-header>
+                        <mat-card-title>{{ action.title}}</mat-card-title>
+                        <mat-card-subtitle>{{ action.type }}</mat-card-subtitle>
+                        <mat-card-subtitle>{{ action.startDate }}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>                
+        </mat-grid-list>
+    </div>
+</div>
+            
+            
+            
+        

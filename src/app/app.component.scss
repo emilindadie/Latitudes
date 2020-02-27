@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+app-header{
+    position: fixed;
+    overflow: visible;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 210;
+}
+
+::ng-deep app-mentor, ::ng-deep app-action, ::ng-deep app-project{
+    position: relative;
+    top: 62px;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+::ng-deep mat-option {
+    font-family: "WorkSans", "Helvetica Neue", sans-serif;
+} 
+
